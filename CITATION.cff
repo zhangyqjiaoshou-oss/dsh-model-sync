@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this plugin in your research, please cite it as below."
+title: "dsh-model-sync"
+authors:
+  - family-names: "Niclas0923"
+    given-names: ""
+    orcid: ""
+version: 1.0.0
+date-released: 2026-06-06
+repository-code: "https://github.com/zhangyqjiaoshou-oss/dsh-model-sync"
+license: MIT
+type: software
