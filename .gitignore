@@ -3,3 +3,4 @@ lib/
 *.tsbuildinfo
 *.tgz
 .npm-cache/
+package-lock.json
