@@ -13,7 +13,16 @@ One-click / auto model sync for DeepSeek Harness providers. Queries each provide
 
 ## 安装 / Installation
 
-### `dsh plugin add`（推荐，需 bundle 支持的环境）
+### `npx`（推荐，无需事先安装任何东西）
+
+```bash
+# 一键安装插件到当前 DSH web profile
+npx github:zhangyqjiaoshou-oss/dsh-model-sync install
+```
+
+> 你发 npm 后这个命令会变成 `npx @dsh-external/dsh-model-sync install`。目前走 GitHub 直装通道。
+
+### `dsh plugin add`（需 bundle 支持的环境）
 
 ```bash
 dsh plugin --profile web add @dsh-external/dsh-model-sync

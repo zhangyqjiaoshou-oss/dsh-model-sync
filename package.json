@@ -8,9 +8,13 @@
   "types": "./lib/types/index.d.ts",
   "files": [
     "lib",
+    "bin",
     "cordis.patch.yml"
   ],
   "license": "MIT",
+  "bin": {
+    "dsh-model-sync": "./bin/dsh-model-sync.mjs"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/zhangyqjiaoshou-oss/dsh-model-sync.git"
