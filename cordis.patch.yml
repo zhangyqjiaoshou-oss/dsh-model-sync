@@ -1,0 +1,5 @@
+# dsh-model-sync cordis patch
+# Applied by DSH bundle loader when the plugin is installed via `dsh plugin add`.
+- insert:
+    - id: dsh-model-sync
+      name: '@dsh-external/dsh-model-sync'

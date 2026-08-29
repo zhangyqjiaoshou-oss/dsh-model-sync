@@ -7,18 +7,18 @@
   "main": "./lib/index.js",
   "types": "./lib/types/index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "cordis.patch.yml"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dsh-external/dsh-model-sync.git"
+    "url": "https://github.com/zhangyqjiaoshou-oss/dsh-model-sync.git"
   },
   "keywords": [
     "dsh",
     "deepseek-harness",
     "cordis",
-    "plugin",
     "model-sync",
     "llm"
   ],
@@ -51,6 +51,9 @@
     "./package.json": "./package.json"
   },
   "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
     "client": {
       "inject": [
         "@deepseek-ai/dsh-client-runtime",
