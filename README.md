@@ -13,13 +13,19 @@ One-click / auto model sync for DeepSeek Harness providers. Queries each provide
 
 ## 安装 / Installation
 
-作为 DSH 插件包加载（junction 链接 + loader 装配，或通过 dsh-super-injector 的 `dev_inject_plugin` 注入本目录）。
+### `dsh plugin add`（推荐，需 bundle 支持的环境）
 
 ```bash
-# 从源码构建（需要 dsh checkout 或 npm 全局安装的 @deepseek-ai/dsh）
-DSH_CHECKOUT=<deepseek-harness checkout> bash scripts/build.sh
-# 或自动探测 npm 全局安装
+dsh plugin --profile web add @dsh-external/dsh-model-sync
+```
+
+### 手动注入（通过 dsh-super-injector）
+
+```bash
+# 从源码构建
 bash scripts/build.sh
+# 注入到当前运行的 DSH
+dev_inject_plugin C:/Users/niclas/Desktop/dsh/model-sync
 ```
 
 ## 使用方法 / Usage
