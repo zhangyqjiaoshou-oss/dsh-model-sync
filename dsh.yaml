@@ -1,0 +1,7 @@
+# dsh-model-sync: 模型同步插件
+# 安装后 dsh 自动加载此插件
+id: dsh-model-sync
+name: '@dsh-external/dsh-model-sync'
+config:
+  autoSync: false
+  debounceMs: 10000
