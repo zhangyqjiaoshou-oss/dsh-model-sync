@@ -18,14 +18,14 @@ import type { IApiClient } from '@deepseek-ai/dsh-client-connection/client'
  * subset this plugin touches is declared locally instead of imported).
  */
 interface SlotsService {
-  inject(key: string, callback: () => (() => void) | void, name?: string): void
+  inject(key: string, callback: () => void, name?: string): void
   register(entry: {
     name: string
     id: string
     order?: number
     label?: () => string | undefined
     component: () => { render(): HTMLElement }
-  }): unknown
+  }): void
 }
 
 type ClientContext = {
@@ -136,7 +136,7 @@ export function apply(ctx: ClientContext): void {
   }
 
   // ── settings section UI (DOM render, no framework dependency) ─────────────
-  ctx.slots.inject('settings.section', () =>
+  ctx.slots.inject('settings.section', () => {
     ctx.slots.register({
       name: 'settings.section',
       id: 'model-sync',
@@ -219,8 +219,7 @@ export function apply(ctx: ClientContext): void {
           root.append(title, intro, toggleRow, button, status, divider, help)
           return root
         },
-      }),
-    }),
-    'dsh-model-sync: settings section',
-  )
+      })
+    })
+  }, 'dsh-model-sync: settings section')
 }

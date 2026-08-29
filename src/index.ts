@@ -20,6 +20,13 @@ import { Context, Service } from '@deepseek-ai/cordis'
 import { installSettingsSection, settingsNamespace } from '@deepseek-ai/dsh-settings'
 import z from '@deepseek-ai/schemastery'
 
+declare module '@deepseek-ai/cordis' {
+  interface Events {
+    /** A conversation session page opened (the Host-side session lifecycle began). */
+    'agent/session-start'(): void
+  }
+}
+
 /** The namespace this plugin owns: the auto-sync switch. */
 const OWN_NS = settingsNamespace('model-sync')
 /** The namespace this plugin reconciles: pi-ai provider profiles. */
@@ -168,12 +175,14 @@ export function apply(ctx: AppContext, config: SyncConfig): void {
     setSource: (source) => {
       current = source
       autocatch(() => {
-        if (isSyncConfig(current()) && typeof current().autoSync === 'boolean') autoSyncEnabled = current().autoSync
+        const value = current()
+        if (isSyncConfig(value) && typeof value.autoSync === 'boolean') autoSyncEnabled = value.autoSync
       })
     },
     onChange: () => {
       autocatch(() => {
-        if (isSyncConfig(current()) && typeof current().autoSync === 'boolean') autoSyncEnabled = current().autoSync
+        const value = current()
+        if (isSyncConfig(value) && typeof value.autoSync === 'boolean') autoSyncEnabled = value.autoSync
       })
     },
   })
