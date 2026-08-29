@@ -13,4 +13,5 @@
 - **Client**: "How it works" explanation section
 - **Build**: `scripts/build.sh` with auto-detection (DSH_CHECKOUT / npm global install)
 - **Build**: tsdown client bundle, tsc host compile
-- **Ecosystem**: `dsh-plugin` GitHub topic, `dsh.bundle.patch` manifest, `cordis.patch.yml`
+- **CLI**: `bin/dsh-model-sync.mjs` — `npx github:zhangyqjiaoshou-oss/dsh-model-sync install` one-command install
+- **Ecosystem**: `dsh-plugin` GitHub topic, `dsh.bundle.patch` manifest, `cordis.patch.yml`, awesome-dsh-plugin submission PR
